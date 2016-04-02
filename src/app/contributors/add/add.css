@@ -1,0 +1,12 @@
+.add-edit-icons {
+  font-size: 100%;
+  vertical-align: top; }
+
+.add-edit-transform {
+  transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+.add-edit-primary {
+  color: #2196f3; }
+
+.add-edit-card {
+  margin: 16px; }

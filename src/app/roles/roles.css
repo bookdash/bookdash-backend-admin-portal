@@ -1,0 +1,12 @@
+table {
+    border-collapse:collapse
+}
+
+tr {
+    border-bottom: 1pt dotted #D7D7D7;
+}
+
+td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

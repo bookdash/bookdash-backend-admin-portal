@@ -1,0 +1,22 @@
+<br/>
+
+<md-card class="add-edit-card">
+    <md-card-title>
+    </md-card-title>
+    <md-card-content>
+        <table>
+        <tr *ngFor="#role of roles | async">
+            <td class="text">
+                {{role.name}}
+            </td>
+        </tr>
+        </table>
+    </md-card-content>
+</md-card>
+<br/>
+<button md-raised-button color="primary" (click)="addRole()">Add Role</button>
+<br/>
+<br/>
+<div *ngIf="showAdd">
+    <add [(show)]="showAdd"></add>
+</div>

@@ -1,0 +1,8 @@
+<p>
+  list-books Works!
+</p>
+<ul *ngFor="#item of items | async">
+    <li class="text">
+        {{item.bookTitle}}
+    </li>
+</ul>

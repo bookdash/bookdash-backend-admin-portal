@@ -1,0 +1,11 @@
+<md-card class="add-edit-card">
+    <md-card-title>
+    </md-card-title>
+    <md-card-content>
+        <p>
+            Name: <input [(ngModel)]="name" type="string" placeholder="role name"/>
+        </p>
+        <button md-raised-button color="primary" (click)="doCancel()">Cancel</button>
+        <button md-raised-button color="primary" (click)="doSave()">Save</button>
+    </md-card-content>
+</md-card>
