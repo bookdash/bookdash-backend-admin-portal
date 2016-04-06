@@ -1,0 +1,17 @@
+<div *ngIf="edit">
+    <td class="text">
+        <input [(ngModel)]="role.name" type="string" placeholder="role name"/>
+    </td>
+    <td>
+        <div><button (click)="doSave()"><i class="material-icons">check_circle</i></button></div>
+    </td>
+</div>
+<div *ngIf="!edit">
+    <td class="text">
+        <div (click)="doEdit()">{{name}}</div>
+    </td>
+    <td>
+        <div></div>
+    </td>
+</div>
+

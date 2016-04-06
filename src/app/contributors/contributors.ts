@@ -10,6 +10,7 @@ import {MdButton} from '@angular2-material/button';
     directives: [Add, MdButton],
     pipes: []
 })
+
 export class Contributors {
     showAdd: boolean = false;
 

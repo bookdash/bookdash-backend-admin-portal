@@ -3,6 +3,8 @@ import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
 import {MdButton} from '@angular2-material/button';
 import {FirebaseRef} from 'angularfire2';
 
+declare var ROLES: any;
+
 @Component({
     selector: 'add',
     templateUrl: 'app/roles/add/add.html',
@@ -19,7 +21,7 @@ export class Add {
     constructor(@Inject(FirebaseRef) public firebase:Firebase){}
 
     doSave() {
-        var roles = this.firebase.child('bd_roles');
+        var roles = this.firebase.child(ROLES);
         roles.push().set({
             name: this.name
         });

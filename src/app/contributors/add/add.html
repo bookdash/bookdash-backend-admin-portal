@@ -8,8 +8,15 @@
         <p>
             Avatar: <input [(ngModel)]="avatarUrl" type="string" placeholder="full avatar url" />
         </p>
-        <p>
             Role: 
-        </p>
+            <table>
+                <tr *ngFor="#role of roleCheckboxes">
+                    <td>
+                        <md-checkbox [checked]="role.isChecked">
+                            {{role.name}}
+                        </md-checkbox>
+                    </td>
+                </tr>
+            </table>
     </md-card-content>
 </md-card>

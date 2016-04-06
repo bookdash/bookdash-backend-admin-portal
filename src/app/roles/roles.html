@@ -5,11 +5,10 @@
     </md-card-title>
     <md-card-content>
         <table>
-        <tr *ngFor="#role of roles | async">
-            <td class="text">
-                {{role.name}}
-            </td>
-        </tr>
+            <tr *ngFor="#role of roles | async; #i =index">
+                <edit [(key)]="role.$key" [(name)]="role.name">
+                </edit>
+            </tr>
         </table>
     </md-card-content>
 </md-card>
