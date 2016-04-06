@@ -12,11 +12,14 @@
             <table>
                 <tr *ngFor="#role of roleCheckboxes">
                     <td>
-                        <md-checkbox [checked]="role.isChecked">
+                        <md-checkbox [(ngModel)]="role.isChecked">
                             {{role.name}}
                         </md-checkbox>
                     </td>
                 </tr>
             </table>
+        <button md-raised-button color="primary" (click)="doCancel()">Cancel</button>
+        <button md-raised-button color="primary" (click)="doSave()">Save</button>
+
     </md-card-content>
 </md-card>

@@ -7,6 +7,7 @@ import {FirebaseRef} from 'angularfire2';
 import {MdCheckbox} from '@angular2-material/checkbox';
 
 declare var ROLES: any;
+declare var CONTRIBUTORS: any;
 
 @Component({
     selector: 'add',
@@ -39,6 +40,26 @@ export class Add {
     }
     
     doSave() {
+        var contributors = this.firebase.child(CONTRIBUTORS);
+        var contributor = {
+            name: this.name,
+            avatar: this.avatarUrl,
+            roles: {}
+        }
 
+        console.log(this.roleCheckboxes)
+        for (var i = 0; i < this.roleCheckboxes.length; i++){
+            if(this.roleCheckboxes[i].isChecked == true){
+                contributor.roles[this.roleCheckboxes[i].key] = true
+            }
+        }
+        contributors.push().set(contributor);
+        this.doCancel();
     }
+
+    doCancel(){
+        this.show = false;
+        this.showChange.emit(this.show);
+    }
+
 }
