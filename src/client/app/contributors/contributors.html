@@ -1,6 +1,29 @@
 <br/>
-<button md-raised-button color="primary" (click)="addContributor()">Add Contributor</button>
 
+<md-card class="add-edit-card">
+    <md-card-title>
+    </md-card-title>
+    <md-card-content>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Avatar</th>
+                <th>Roles</th>
+            </tr>
+            <tr *ngFor="#contributor_row of contributors | async; #i =index"
+                [contributor]="contributor_row">
+                <edit key="contributor.$key" name="contributor.name"
+                   avatar="contributor.avatar" contributor="contributor">
+                </edit>
+            </tr>
+        </table>
+    </md-card-content>
+</md-card>
+<br/>
+
+<button md-raised-button color="primary" (click)="addContributor()">Add Contributor</button>
+<br/>
+<br/>
 <div *ngIf="showAdd">
     <add [(show)]="showAdd"></add>
 </div>
