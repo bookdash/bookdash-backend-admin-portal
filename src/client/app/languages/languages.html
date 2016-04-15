@@ -1,0 +1,21 @@
+<br/>
+
+<md-card class="add-edit-card">
+    <md-card-title>
+    </md-card-title>
+    <md-card-content>
+        <table>
+            <tr *ngFor="#language of languages | async; #i =index">
+                <edit [(key)]="language.$key" [(languageName)]="language.name">
+                </edit>
+            </tr>
+        </table>
+    </md-card-content>
+</md-card>
+<br/>
+<button md-raised-button color="primary" (click)="addLanguage()">Add Language</button>
+<br/>
+<br/>
+<div *ngIf="showAdd">
+    <add [(show)]="showAdd"></add>
+</div>

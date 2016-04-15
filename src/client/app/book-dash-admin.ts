@@ -10,6 +10,7 @@ import {NavbarComponent} from './components/navbar.component';
 import {ToolbarComponent} from './components/toolbar.component';
 import {Contributors} from './contributors/contributors'
 import {Roles} from './roles/roles'
+import {Languages} from './languages/languages'
 
 @Component({
     selector: 'book-dash-admin-app',
@@ -24,7 +25,8 @@ import {Roles} from './roles/roles'
 @RouteConfig([
     {path: '/', name: 'Books', component: ListBooks},
     {path: '/contributors', name: 'Contributors', component: Contributors},
-    {path: '/roles', name: 'Roles', component: Roles}
+    {path: '/roles', name: 'Roles', component: Roles},
+    {path: '/languages', name: 'Languages', component: Languages}
 ].concat(CliRouteConfig))
 
 export class BookDashAdminApp {
