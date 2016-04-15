@@ -12,13 +12,11 @@ declare var CONTRIBUTORS: any;
   pipes: []
 })
 export class Edit {
-    @Input() key: string; 
-    @Input() name: string;
-    @Input() avatar: string
     edit: boolean = false;
     @Input() contributor: any; 
 
-    constructor(@Inject(FirebaseRef) public firebase:Firebase) {}
+    constructor(@Inject(FirebaseRef) public firebase:Firebase) {
+    }
 
     doEdit(){
         /*this.firebase.child(CONTRIBUTORS)

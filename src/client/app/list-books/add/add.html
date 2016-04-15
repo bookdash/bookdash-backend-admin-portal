@@ -1,0 +1,28 @@
+<md-card class="add-edit-card">
+    <md-card-title>
+    </md-card-title>
+    <md-card-content>
+        <p>
+            Book Title: <input [(ngModel)]="bookTitle" type="string" placeholder="book title"/>
+        </p>
+        <p>
+            Book Cover Page Url: <input [(ngModel)]="bookCoverpageUrl" type="string" placeholder="book coverpage url" />
+        </p>
+        <p>
+            <md-checkbox [(ngModel)]="bookEnabled">Book Enabled</md-checkbox>
+        </p>
+            Contributors: 
+            <table>
+                <tr *ngFor="#contributor of contributorCheckboxes">
+                    <td>
+                        <md-checkbox [(ngModel)]="contributor.isChecked">
+                            {{contributor.name}}
+                        </md-checkbox>
+                    </td>
+                </tr>
+            </table>
+        <button md-raised-button color="primary" (click)="doCancel()">Cancel</button>
+        <button md-raised-button color="primary" (click)="doSave()">Save</button>
+
+    </md-card-content>
+</md-card>
