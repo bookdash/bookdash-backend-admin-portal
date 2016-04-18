@@ -5,9 +5,13 @@
     </md-card-title>
     <md-card-content>
         <table>
-            <tr *ngFor="#language of languages | async; #i =index">
-                <edit [(key)]="language.$key" [(languageName)]="language.name">
-                </edit>
+            <tr>
+                <th>Name</th>
+                <th>Abbreviation</th>
+                <th>Enabled</th>
+            </tr>
+            <tr *ngFor="#language_row of languages | async; #i =index"
+                [language]="language_row">
             </tr>
         </table>
     </md-card-content>
