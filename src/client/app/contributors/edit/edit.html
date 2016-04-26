@@ -5,8 +5,8 @@
   <input [(ngModel)]="contributor.avatar" type="string" placeholder="contributor avatar"/>
 </td>
 <td *ngIf="edit">
-  <div *ngFor="#role of roleCheckboxes">
-    <md-checkbox [(ngModel)]="role.isChecked">
+  <div >
+    <md-checkbox *ngFor="#role of roleCheckboxes" [(ngModel)]="role.isChecked" [(checked)]="role.isChecked" >
       {{role.name}}
     </md-checkbox>
   </div>
@@ -21,5 +21,5 @@
   <img style="max-width: 100px; height: auto; " src="{{contributor.avatar}}" />
 </td>
 <td >
-  <div></div>
+  <div *ngIf="!edit">{{rolesString}}</div>
 </td>
