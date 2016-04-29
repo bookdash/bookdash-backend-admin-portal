@@ -5,9 +5,11 @@ import {AngularFire} from 'angularfire2';
 import {Observable} from 'rxjs/Observable';
 import {FirebaseRef} from 'angularfire2';
 import {MdCheckbox} from '@angular2-material/checkbox';
+import {MdInput} from '@angular2-material/input';
 
 declare var ROLES: any;
 declare var CONTRIBUTORS: any;
+declare var LANGUAGES: any;
 declare var BOOKS: any;
 
 
@@ -16,7 +18,7 @@ declare var BOOKS: any;
     templateUrl: 'app/list-books/add/add.html',
     styleUrls: ['app/list-books/add/add.css'],
     providers: [],
-    directives: [MD_CARD_DIRECTIVES, MdButton, MdCheckbox],
+    directives: [MD_CARD_DIRECTIVES, MdButton, MdCheckbox, MdInput],
     pipes: []
 })
 
@@ -25,6 +27,8 @@ export class Add {
     @Output() showChange = new EventEmitter();
     bookTitle: string;
     bookCoverPageUrl: string;
+    bookLanguage: any;
+    languages: any = [];
     contributors: any;
     contributorCheckboxes: any = [];
 
@@ -40,6 +44,20 @@ export class Add {
                       })
                   }
                  );
+        this.firebase.child(LANGUAGES)
+            .once("value",
+                  (languages) => {
+                      languages.forEach((language) => {
+                          console.log(language.val())
+                          var languageHash: any = language.val()
+                          languageHash['key'] = language.key()
+                          console.log(languageHash)
+                          this.languages.push(languageHash)
+                      })
+                    console.log(languages.val())
+                  }
+                 );
+
     }
 
 }
