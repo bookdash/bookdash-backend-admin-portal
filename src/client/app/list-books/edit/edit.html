@@ -1,0 +1,19 @@
+<td class="text">
+        <md-checkbox [(ngModel)]="book.bookEnabled" [(checked)]="!!book.bookEnabled" [(disabled)]="!edit">
+        </md-checkbox>
+</td>
+<td *ngIf="!edit" class="text">
+    <div (click)="doEdit()">{{book.bookTitle}}</div>
+</td>
+<td *ngIf="!edit" class="text">
+    <div (click)="doEdit()">{{language}}</div>
+</td>
+<td *ngIf="!edit" class="text">
+    <div (click)="doEdit()"></div>
+</td>
+<td *ngIf="!edit">
+    <img style="max-width: 100px; height: auto; " src="{{book.bookCoverPageUrl}}" />
+</td>
+<td >
+    <div *ngIf="!edit">{{book.bookUrl}}</div>
+</td>

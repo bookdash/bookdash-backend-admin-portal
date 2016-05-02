@@ -27,6 +27,8 @@ export class Add {
     @Output() showChange = new EventEmitter();
     bookTitle: string;
     bookCoverPageUrl: string;
+    bookUrl: string;
+    bookEnabled: boolean;
     bookLanguage: any;
     languages: any = [];
     contributors: any;
@@ -39,11 +41,12 @@ export class Add {
                   (contributors) => {
                       contributors.forEach((contributor) => {
                           this.contributorCheckboxes.push({key: contributor.key(),
-                                                    name: contributor.val().name,
-                                                    isChecked: false})
+                                                           name: contributor.val().name,
+                                                           isChecked: false})
                       })
                   }
                  );
+        
         this.firebase.child(LANGUAGES)
             .once("value",
                   (languages) => {
@@ -54,10 +57,40 @@ export class Add {
                           console.log(languageHash)
                           this.languages.push(languageHash)
                       })
-                    console.log(languages.val())
+                      console.log(languages.val())
                   }
                  );
 
+    }
+
+    doSave() {
+        var books = this.firebase.child(BOOKS);
+
+        var contributorsHash = {}
+
+        for(var contributorCheckboxIndex in this.contributorCheckboxes){
+            console.log(contributorCheckboxIndex)
+            if(this.contributorCheckboxes[contributorCheckboxIndex].isChecked){
+                contributorsHash[this.contributorCheckboxes[contributorCheckboxIndex].key] = true
+            }
+        }
+
+        var bookData = {
+            bookTitle: this.bookTitle,
+            bookCoverPageUrl: this.bookCoverPageUrl,
+            bookUrl: this.bookUrl,
+            bookLanguage: this.bookLanguage,
+            bookEnabled: this.bookEnabled,
+            contributors: contributorsHash
+        }
+        
+        books.push().set(bookData);
+        this.doCancel();
+    }
+
+    doCancel(){
+        this.show = false;
+        this.showChange.emit(this.show);
     }
 
 }

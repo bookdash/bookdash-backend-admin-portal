@@ -7,7 +7,12 @@
             </md-input>     
         </p>
         <p>
-            Book Cover Page Url: <input [(ngModel)]="bookCoverpageUrl" type="string" placeholder="book coverpage url" />
+            <md-input [(ngModel)]="bookCoverPageUrl" type="string" placeholder="Book Cover Page URL">
+            </md-input> 
+        </p>
+        <p>
+            <md-input [(ngModel)]="bookUrl" type="string" placeholder="Book URL">
+            </md-input> 
         </p>
         <p>
             <md-checkbox [(ngModel)]="bookEnabled">Book Enabled</md-checkbox>
