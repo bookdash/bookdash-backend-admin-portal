@@ -1,19 +1,49 @@
 <td class="text">
-        <md-checkbox [(ngModel)]="book.bookEnabled" [(checked)]="!!book.bookEnabled" [(disabled)]="!edit">
-        </md-checkbox>
+    <md-checkbox [(ngModel)]="book.bookEnabled" [(checked)]="!!book.bookEnabled" [(disabled)]="!edit">
+    </md-checkbox>
 </td>
 <td *ngIf="!edit" class="text">
     <div (click)="doEdit()">{{book.bookTitle}}</div>
 </td>
+<td *ngIf="edit">
+    <md-input [(ngModel)]="book.bookTitle" type="string" placeholder="">
+    </md-input>     
+</td>
 <td *ngIf="!edit" class="text">
     <div (click)="doEdit()">{{language}}</div>
 </td>
+<td *ngIf="edit" class="text">
+    <select [(ngModel)]="languageObject">
+        <option *ngFor="#language of languages" [value]="language.key">{{language.languageName}}</option>
+    </select>
+</td>
 <td *ngIf="!edit" class="text">
-    <div (click)="doEdit()"></div>
+    <div (click)="doEdit()" *ngFor="#contributor of contributors">{{contributor.name}}</div>
+</td>
+<td *ngIf="edit" class="text">
+    <div *ngFor="#contributor of contributors">{{contributor.name}} <div (click)="deleteContributor(contributor)" class="material-icons">delete</div></div>
+    <select [(ngModel)]="selectedContributor" (change)="addContributor($event.target.value)">
+        <option *ngFor="#contributor of allContributors" [value]="contributor.key">{{contributor.name}}</option>
+    </select>
 </td>
 <td *ngIf="!edit">
     <img style="max-width: 100px; height: auto; " src="{{book.bookCoverPageUrl}}" />
 </td>
+<td *ngIf="edit">
+    <md-input [(ngModel)]="book.bookCoverPageUrl" type="string" placeholder="">
+    </md-input>     
+</td>
 <td >
     <div *ngIf="!edit">{{book.bookUrl}}</div>
+    <div *ngIf="edit">
+        <md-input [(ngModel)]="book.bookCoverPageUrl" type="string" placeholder="">
+        </md-input>     
+    </div>
 </td>
+<td *ngIf="edit" >
+  <div><button (click)="doCancel()"><i class="material-icons">highlight_off</i></button></div>
+</td>
+<td *ngIf="edit" >
+  <div><button (click)="doSave()"><i class="material-icons">check_circle</i></button></div>
+</td>
+
