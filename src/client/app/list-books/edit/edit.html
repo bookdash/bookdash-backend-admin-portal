@@ -40,6 +40,13 @@
         </md-input>     
     </div>
 </td>
+<td >
+    <div *ngIf="!edit">{{book.bookDescription}}</div>
+    <div *ngIf="edit">
+        <md-input [(ngModel)]="book.bookDescription" type="string" placeholder="">
+        </md-input>
+    </div>
+</td>
 <td *ngIf="edit" >
   <div><button (click)="doCancel()"><i class="material-icons">highlight_off</i></button></div>
 </td>
