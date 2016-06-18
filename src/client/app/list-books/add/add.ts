@@ -26,6 +26,7 @@ export class Add {
     @Input() show: boolean; 
     @Output() showChange = new EventEmitter();
     bookTitle: string;
+    bookDescription: string;
     bookCoverPageUrl: string;
     bookUrl: string;
     bookEnabled: boolean;
@@ -77,6 +78,7 @@ export class Add {
 
         var bookData = {
             bookTitle: this.bookTitle,
+            bookDescription : this.bookDescription,
             bookCoverPageUrl: this.bookCoverPageUrl,
             bookUrl: this.bookUrl,
             bookLanguage: this.bookLanguage,
