@@ -1,0 +1,16 @@
+<h1>
+  {{title}}
+</h1>
+<div>
+    <sd-toolbar></sd-toolbar>
+</div>
+
+<div *ngIf="auth | async">
+    <sd-navbar></sd-navbar>
+    <router-outlet></router-outlet>
+</div>
+<div *ngIf="!(auth | async)">
+    Please log in
+    <router-outlet></router-outlet>
+</div>
+

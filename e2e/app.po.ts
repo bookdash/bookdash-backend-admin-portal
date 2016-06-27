@@ -4,6 +4,6 @@ export class BookDashAdminPage {
   }
 
   getParagraphText() {
-    return element(by.css('book-dash-admin-app p')).getText();
+    return element(by.css('app-root h1')).getText();
   }
 }
