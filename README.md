@@ -1,5 +1,23 @@
 # BookDashAdmin
 
+Administration application for the BookDash NPO mobile apps.
+
+## Setting Up Your Environment
+
+1.  Make sure you have a recent version of node.js installed.  We prefer to use nvm to manage node versions which can be installed via curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+2.  Install the latest version of node.js...nvm install v5.11.1
+3.  Swith to this version of node via nvm use v5.11.1
+4.  In the root directory install all of the modules via "npm install"
+5.  If you have the angular-cli installed uninstall is in the version of node via "npm uninstall -g angular-cli" 
+6.  Install the angular-cli node package via "npm install -g angular-cli@1.0.0-beta.8"
+7.  Install typings via "npm install typings@0.7.12 -g"
+8.  now install the project specific typings via "typings install --save --ambient firebase"
+9.  do the same for jasmine typings via "typings install jasmine --save-dev --ambient"
+10.  now start up the server with "ng serve"
+
+
+## Development notes
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.8.
 
 ## Development server
