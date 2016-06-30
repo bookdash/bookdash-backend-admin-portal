@@ -22,32 +22,25 @@ export class Edit {
     @Input() book: any; 
     @Input() books: any;
     language: string;
-    languageObject: any;
     languages: Array<any> = [];
     contributors: Array<any> = [];
     allContributors: Array<any> = [];
     contributorsRaw: any;
     selectedContributor: any;
-    angularFire: AngularFire;
     key: string;
 
-    constructor(angularFire: AngularFire) {
-        this.angularFire = angularFire;
+    constructor(public angularFire: AngularFire) {
     }
-
     
     ngOnInit(){
-        console.log("hello")
-        console.log(this.book)
         this.key = this.book.$key
         if(this.book != 'book')
         {
-
             var languages: Observable<any[]> = this.angularFire.database.list(LANGUAGES)
 
             languages.subscribe(
                 (languagesRaw) => {
-                    this.languageObject = this.book.bookLanguage;
+                    this.languages = []
                     languagesRaw.forEach((language) => {
                         if(language.$key === this.book.bookLanguage){
                             this.language = language.languageName;
@@ -56,16 +49,16 @@ export class Edit {
                         languageHash['key'] = language.$key
                         this.languages.push(languageHash)
                     })
-
-
                 }
             )
 
             var contributors: Observable<any[]> = this.angularFire.database.list(CONTRIBUTORS)
             contributors.subscribe(
                 (contributorsRaw) => {
-                    console.log('contributors raw')
-                    console.log(contributorsRaw)
+                    this.contributors = []
+                    if(this.book.contributors === undefined){
+                        this.book.contributors = {}
+                    }
                     contributorsRaw.forEach((contributor) => {
                         var contributorHash: any = contributor
                         contributorHash['key'] = contributor.$key
@@ -79,7 +72,6 @@ export class Edit {
                 }
             )
 
-
         }
     }
 
@@ -92,14 +84,13 @@ export class Edit {
     }
 
     deleteContributor(contributor){
-        /*        this.allContributors.push(contributor)
-                  delete this.book.contributors[contributor.key]
-                  for(var contributorIndex in this.contributors){
-                  
-                  if(this.contributors[contributorIndex].key === contributor.key){
-                  this.contributors.splice(Number(contributorIndex), 1)
-                  }
-                  } */
+        this.allContributors.push(contributor)
+        delete this.book.contributors[contributor.key]
+        for(var contributorIndex in this.contributors){
+            if(this.contributors[contributorIndex].key === contributor.key){
+                this.contributors.splice(Number(contributorIndex), 1)
+            }
+        }
     }
 
     addContributor(contributorKey){
@@ -110,7 +101,6 @@ export class Edit {
                 this.allContributors.splice(Number(contributorIndex), 1)
             }
         }
-        console.log(contributorKey)
     }
     
     doSave(){

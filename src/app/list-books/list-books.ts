@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-//import {Add} from './add/add';
+import {Add} from './add/add';
 import {Edit} from './edit/edit';
 import {MdButton} from '@angular2-material/button';
 import {AngularFire} from 'angularfire2';
@@ -13,8 +13,8 @@ declare var BOOKS: any;
   templateUrl: 'app/list-books/list-books.html',
   styleUrls: ['app/list-books/list-books.css'],
   providers: [AngularFire],
-  //directives: [Add, Edit, MdButton, MD_CARD_DIRECTIVES],
-    directives: [Edit,MdButton, MD_CARD_DIRECTIVES],
+  directives: [Add, Edit, MdButton, MD_CARD_DIRECTIVES],
+  //  directives: [Edit,MdButton, MD_CARD_DIRECTIVES],
   pipes: []
 })
 

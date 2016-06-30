@@ -27,7 +27,7 @@
     <button md-raised-button color="primary" (click)="addBook()">Add Book</button>
     <br/>
     <br/>
+    <div *ngIf="showAdd">
+        <add [(show)]="showAdd" [books]="books"></add>
+    </div>
 </div>
-<!--div *ngIf="showAdd">
-     <add [(show)]="showAdd"></add>
-     </div-->
