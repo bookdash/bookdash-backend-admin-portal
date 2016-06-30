@@ -15,6 +15,7 @@ export class ToolbarComponent {
     constructor(public angularFire: AngularFire){
         this.angularFire.auth.subscribe(auth =>{
             console.log("auth happened")
+            console.log(auth)
         })
     }
 
