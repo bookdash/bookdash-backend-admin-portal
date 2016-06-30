@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
 import {ListBooks} from './list-books/list-books';
 import {NavbarComponent} from './components/navbar.component';
 import {ToolbarComponent} from './components/toolbar.component';
+import {AngularFire} from 'angularfire2'
 
 @Component({
     moduleId: module.id,
@@ -15,5 +16,5 @@ import {ToolbarComponent} from './components/toolbar.component';
 
 
 export class AppComponent {
-    title = 'app works!';
+    constructor(public angularFire: AngularFire){}
 }

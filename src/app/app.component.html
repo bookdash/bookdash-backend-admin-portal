@@ -5,12 +5,11 @@
     <sd-toolbar></sd-toolbar>
 </div>
 
-<div *ngIf="auth | async">
+<div *ngIf="angularFire.auth | async">
     <sd-navbar></sd-navbar>
-    <router-outlet></router-outlet>
 </div>
-<div *ngIf="!(auth | async)">
-    Please log in
     <router-outlet></router-outlet>
+<div *ngIf="!(angularFire.auth | async)">
+    Please log in
 </div>
 

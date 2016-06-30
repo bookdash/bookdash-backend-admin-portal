@@ -13,11 +13,12 @@ import {MdToolbar} from '@angular2-material/toolbar';
 })
 export class ToolbarComponent {
     constructor(public angularFire: AngularFire){
-        this.angularFire.auth.subscribe(auth => console.log(auth))
+        this.angularFire.auth.subscribe(auth =>{
+            console.log("auth happened")
+        })
     }
 
     public doLogin():void{
-        console.log(this);
         this.angularFire.auth.login({
             provider: AuthProviders.Google
         });

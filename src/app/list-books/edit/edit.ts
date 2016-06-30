@@ -20,6 +20,7 @@ declare var BOOKS: any;
 export class Edit {
     edit: boolean = false;
     @Input() book: any; 
+    @Input() books: any;
     language: string;
     languageObject: any;
     languages: Array<any> = [];
@@ -63,6 +64,8 @@ export class Edit {
             var contributors: Observable<any[]> = this.angularFire.database.list(CONTRIBUTORS)
             contributors.subscribe(
                 (contributorsRaw) => {
+                    console.log('contributors raw')
+                    console.log(contributorsRaw)
                     contributorsRaw.forEach((contributor) => {
                         var contributorHash: any = contributor
                         contributorHash['key'] = contributor.$key
@@ -79,18 +82,7 @@ export class Edit {
 
         }
     }
-    /*            for(var book_contributor in this.book.contributors){
-                  this.firebase.child(CONTRIBUTORS)
-                  .child(book_contributor)
-                  .once("value",
-                  (contributor) => {
-                  console.log(contributor.val());
-                  this.contributors.push(contributor.val());
-                  })
-                  }
-                  }
-                  }
-    */
+
     doEdit(){
         this.edit = true;
     }
@@ -111,28 +103,21 @@ export class Edit {
     }
 
     addContributor(contributorKey){
-        /*
-          this.book.contributors[contributorKey] = true
-          var tempContributor = this.contributorsRaw[contributorKey]
-          tempContributor['key'] = contributorKey
-          this.contributors.push(tempContributor)
-          for(var contributorIndex in this.allContributors){
-          if(this.allContributors[contributorIndex].key === contributorKey){
-          this.allContributors.splice(Number(contributorIndex), 1)
-          }
-          }
-          console.log(contributorKey)
-        */
+        this.book.contributors[contributorKey] = true
+        for(var contributorIndex in this.allContributors){
+            if(this.allContributors[contributorIndex].key === contributorKey){
+                this.contributors.push(this.allContributors[contributorIndex])
+                this.allContributors.splice(Number(contributorIndex), 1)
+            }
+        }
+        console.log(contributorKey)
     }
     
     doSave(){
-        /*
-          console.log(this.book)
-          delete this.book.$key
-          this.firebase.child(BOOKS).child(this.key).set(
-          this.book);
-          this.edit = false;
-        */
+        var bookKey = this.book.$key
+        delete this.book.$key
+        this.books.update(bookKey, this.book)
+        this.edit = false;
     }
 
 }

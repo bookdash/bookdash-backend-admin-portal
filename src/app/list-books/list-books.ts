@@ -22,8 +22,7 @@ export class ListBooks {
     showAdd: boolean = false;
     books: Observable<any[]>;
 
-    constructor(angularFire: AngularFire){
-//    constructor(){
+    constructor(public angularFire: AngularFire){
         console.log('angular fire constructor');
         this.books = angularFire.database.list(BOOKS);
     }
