@@ -15,6 +15,15 @@ Administration application for the BookDash NPO mobile apps.
 9.  do the same for jasmine typings via "typings install jasmine --save-dev --ambient"
 10.  now start up the server with "ng serve"
 
+## Contributing and other development notes
+
+### Contributing
+
+If you would like to contribute to this project please reach out to us.  We would love to have the help.
+
+### Unit Tests
+
+Given the fact that the team was new to Angular 2 and it is only used by a small number of people we opted to not add automated tests to it at this time.  This is something that we would love to layer in as more functionality is added and we are more comfortable with the framework.  This is also an area that would be a great way to get involved in the project and help to bring us along with our Angular2/Typescript TDD foo.  
 
 ## Development notes
 

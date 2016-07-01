@@ -1,0 +1,25 @@
+<td *ngIf="edit" class="text">
+  <input [(ngModel)]="contributor.name" type="string" placeholder="contributor name"/>
+</td>
+<td *ngIf="edit" class="text">
+  <input [(ngModel)]="contributor.avatar" type="string" placeholder="contributor avatar"/>
+</td>
+<td *ngIf="edit">
+  <div >
+    <md-checkbox *ngFor="#role of roleCheckboxes" [(ngModel)]="role.isChecked" [(checked)]="role.isChecked" >
+      {{role.name}}
+    </md-checkbox>
+  </div>
+</td>
+<td *ngIf="edit" >
+  <div><button (click)="doSave()"><i class="material-icons">check_circle</i></button></div>
+</td>
+<td *ngIf="!edit" class="text">
+  <div (click)="doEdit()">{{contributor.name}}</div>
+</td>
+<td *ngIf="!edit">
+  <img style="max-width: 100px; height: auto; " src="{{contributor.avatar}}" />
+</td>
+<td >
+  <div *ngIf="!edit">{{rolesString}}</div>
+</td>
