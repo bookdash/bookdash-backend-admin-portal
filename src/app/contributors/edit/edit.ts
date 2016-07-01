@@ -3,6 +3,7 @@ import {MdButton} from '@angular2-material/button';
 import {AngularFire} from 'angularfire2';
 import {MdCheckbox} from '@angular2-material/checkbox';
 import {Observable} from 'rxjs/Observable';
+import {MdInput} from '@angular2-material/input';
 declare var ROLES: any;
 declare var CONTRIBUTORS: any;
 
@@ -11,7 +12,7 @@ declare var CONTRIBUTORS: any;
     templateUrl: 'app/contributors/edit/edit.html',
     styleUrls: ['app/contributors/edit/edit.css'],
     providers: [],
-    directives: [MdCheckbox],
+    directives: [MdCheckbox, MdInput],
     pipes: []
 })
 export class Edit {

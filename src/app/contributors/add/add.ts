@@ -5,6 +5,7 @@ import {AngularFire} from 'angularfire2';
 import {Observable} from 'rxjs/Observable';
 import {FirebaseRef} from 'angularfire2';
 import {MdCheckbox} from '@angular2-material/checkbox';
+import {MdInput} from '@angular2-material/input';
 
 declare var ROLES: any;
 declare var CONTRIBUTORS: any;
@@ -14,7 +15,7 @@ declare var CONTRIBUTORS: any;
     templateUrl: 'app/contributors/add/add.html',
     styleUrls: ['app/contributors/add/add.css'],
     providers: [],
-    directives: [MD_CARD_DIRECTIVES, MdButton, MdCheckbox],
+    directives: [MD_CARD_DIRECTIVES, MdButton, MdCheckbox, MdInput],
     pipes: []
 })
 export class Add {

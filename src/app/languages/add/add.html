@@ -1,0 +1,18 @@
+<md-card class="add-edit-card">
+    <md-card-title>
+    </md-card-title>
+    <md-card-content>
+        <p>
+            <md-input [(ngModel)]="languageName" type="string" placeholder="Language Name">
+            </md-input>
+        <p>
+            <md-input [(ngModel)]="languageAbbreviation" type="string" placeholder="Language Abbreviation">
+            </md-input>
+        </p>
+        <p>
+            <md-checkbox [(ngModel)]="enabled">Enabled</md-checkbox>
+        </p>
+        <button md-raised-button color="primary" (click)="doCancel()">Cancel</button>
+        <button md-raised-button color="primary" (click)="doSave()">Save</button>
+    </md-card-content>
+</md-card>
