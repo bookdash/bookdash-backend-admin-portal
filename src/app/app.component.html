@@ -1,0 +1,15 @@
+<h1>
+  {{title}}
+</h1>
+<div>
+    <sd-toolbar></sd-toolbar>
+</div>
+
+<div *ngIf="angularFire.auth | async">
+    <sd-navbar></sd-navbar>
+</div>
+    <router-outlet></router-outlet>
+<div *ngIf="!(angularFire.auth | async)">
+    Please log in
+</div>
+

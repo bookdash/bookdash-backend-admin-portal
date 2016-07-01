@@ -1,0 +1,33 @@
+<div *ngIf="angularFire.auth | async">
+    <md-card class="add-edit-card">
+        <md-card-title>
+        </md-card-title>
+        <md-card-content>
+            <table>
+                <tr>
+                    <th>Enabled</th>
+                    <th>Title</th>
+                    <th>Language</th>
+                    <th>Contributors</th>
+                    <th>Cover Page</th>
+                    <th>Book</th>
+                    <th>Description</th>
+                </tr>
+                <tr *ngFor="#book_row of books | async; #i =index"
+                    [book]="book_row" [books]="books">
+                    <edit
+                        book="book" >
+                    </edit>
+                </tr>
+            </table>
+
+        </md-card-content>
+    </md-card>
+
+    <button md-raised-button color="primary" (click)="addBook()">Add Book</button>
+    <br/>
+    <br/>
+    <div *ngIf="showAdd">
+        <add [(show)]="showAdd" [books]="books"></add>
+    </div>
+</div>

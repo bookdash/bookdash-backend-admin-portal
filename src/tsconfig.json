@@ -1,23 +1,24 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "declaration": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "mapRoot": "",
-    "module": "system",
-    "moduleResolution": "node",
-    "noEmitOnError": true,
-    "noImplicitAny": false,
-    "outDir": "../dist/",
-    "rootDir": ".",
-    "sourceMap": true,
-    "sourceRoot": "/",
-    "target": "es5"
-  },
+    "compileOnSave": false,
+    "compilerOptions": {
+        "declaration": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "mapRoot": "/",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noEmitOnError": true,
+        "noImplicitAny": false,
+        "outDir": "../dist/",
+        "rootDir": ".",
+        "sourceMap": true,
+        "target": "es5",
+        "inlineSources": true
+    },
 
-  "files": [
-    "app.ts",
-    "typings.d.ts"
-  ]
+    "files": [
+        "main.ts",
+        "typings.d.ts",
+        "node_modules/angularfire2/firebase3.d.ts"
+    ]
 }

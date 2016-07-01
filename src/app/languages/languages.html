@@ -1,0 +1,27 @@
+<div *ngIf="angularFire.auth | async">
+    <br/>
+
+    <md-card class="add-edit-card">
+        <md-card-title>
+        </md-card-title>
+        <md-card-content>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Abbreviation</th>
+                    <th>Enabled</th>
+                </tr>
+                <tr *ngFor="#language_row of languages | async; #i =index"
+                    [language]="language_row">
+                </tr>
+            </table>
+        </md-card-content>
+    </md-card>
+    <br/>
+    <button md-raised-button color="primary" (click)="addLanguage()">Add Language</button>
+    <br/>
+    <br/>
+    <div *ngIf="showAdd">
+        <add [(show)]="showAdd"></add>
+    </div>
+</div>
