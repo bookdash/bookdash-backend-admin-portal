@@ -14,16 +14,16 @@
 </td>
 <td *ngIf="edit" class="text">
     <select [(ngModel)]="book.bookLanguage">
-        <option *ngFor="#language of languages" [value]="language.key">{{language.languageName}}</option>
+        <option *ngFor="let language of languages" [value]="language.key">{{language.languageName}}</option>
     </select>
 </td>
 <td *ngIf="!edit" class="text">
-    <div (click)="doEdit()" *ngFor="#contributor of contributors">{{contributor.name}}</div>
+    <div (click)="doEdit()" *ngFor="let contributor of contributors">{{contributor.name}}</div>
 </td>
 <td *ngIf="edit" class="text">
-    <div *ngFor="#contributor of contributors">{{contributor.name}} <div (click)="deleteContributor(contributor)" class="material-icons">delete</div></div>
+    <div *ngFor="let contributor of contributors">{{contributor.name}} <div (click)="deleteContributor(contributor)" class="material-icons">delete</div></div>
     <select [(ngModel)]="selectedContributor" (change)="addContributor($event.target.value)">
-        <option *ngFor="#contributor of allContributors" [value]="contributor.key">{{contributor.name}}</option>
+        <option *ngFor="let contributor of allContributors" [value]="contributor.key">{{contributor.name}}</option>
     </select>
 </td>
 <td *ngIf="!edit">
@@ -33,20 +33,30 @@
     <md-input [(ngModel)]="book.bookCoverPageUrl" type="string" placeholder="">
     </md-input>     
 </td>
-<td >
+<td class="text">
     <div *ngIf="!edit">{{book.bookUrl}}</div>
     <div *ngIf="edit">
         <md-input [(ngModel)]="book.bookUrl" type="string" placeholder="">
         </md-input>     
     </div>
 </td>
-<td >
+<td class="text" >
     <div *ngIf="!edit">{{book.bookDescription}}</div>
     <div *ngIf="edit">
         <md-input [(ngModel)]="book.bookDescription" type="string" placeholder="">
         </md-input>
     </div>
 </td>
+<td class="text">
+    <div *ngIf="!edit">
+        {{book.createdDate|date:"medium"}}
+    </div>
+    <div *ngIf="edit">
+        <md-input [(ngModel)]="displayDate" type="date" name="createdDate">
+        </md-input>
+    </div>
+</td>
+
 <td *ngIf="edit" >
   <div><button (click)="doCancel()"><i class="material-icons">highlight_off</i></button></div>
 </td>

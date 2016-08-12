@@ -1,6 +1,6 @@
-<div *ngIf="angularFire.auth | async">
-    <md-card class="add-edit-card">
-        <md-card-title>
+<div *ngIf="angularFire.auth | async" style="margin-left:16px;margin-right:16px;margin-top: 8px;">
+    <md-card class="add-edit-card" >
+        <md-card-title> Current Books
         </md-card-title>
         <md-card-content>
             <table>
@@ -12,8 +12,9 @@
                     <th>Cover Page</th>
                     <th>Book</th>
                     <th>Description</th>
+                    <th>Created Date</th>
                 </tr>
-                <tr *ngFor="#book_row of books | async; #i =index"
+                <tr *ngFor="let book_row of books | async; let i =index"
                     [book]="book_row" [books]="books">
                     <edit
                         book="book" >
@@ -23,7 +24,7 @@
 
         </md-card-content>
     </md-card>
-
+    <br/>
     <button md-raised-button color="primary" (click)="addBook()">Add Book</button>
     <br/>
     <br/>

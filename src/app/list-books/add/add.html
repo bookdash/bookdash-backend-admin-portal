@@ -1,5 +1,5 @@
 <md-card class="add-edit-card">
-    <md-card-title>
+    <md-card-title> Add New Book
     </md-card-title>
     <md-card-content>
         <p>
@@ -14,6 +14,10 @@
             <md-input [(ngModel)]="bookCoverPageUrl" type="string" placeholder="Book Cover Page URL">
             </md-input> 
         </p>
+           <p>Created Date:
+               <md-input [(ng-model)]="displayDate" type="date" name="createdDate">
+               </md-input>
+        </p>
         <p>
             <md-input [(ngModel)]="bookUrl" type="string" placeholder="Book URL">
             </md-input> 
@@ -23,7 +27,7 @@
         </p>
         Contributors: 
         <table>
-            <tr *ngFor="#contributor of contributorCheckboxes">
+            <tr *ngFor="let contributor of contributorCheckboxes">
                 <td>
                     <md-checkbox [(ngModel)]="contributor.isChecked">
                         {{contributor.name}}
@@ -34,7 +38,7 @@
         <p>
             Language:
             <select [(ngModel)]="bookLanguage">
-                <option *ngFor="#language of languages" [value]="language.key">{{language.languageName}}</option>
+                <option *ngFor="let language of languages" [value]="language.key">{{language.languageName}}</option>
             </select>
         </p>
         <button md-raised-button color="primary" (click)="doCancel()">Cancel</button>

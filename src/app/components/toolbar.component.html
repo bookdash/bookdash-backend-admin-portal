@@ -3,6 +3,7 @@
     Bookdash Admin
 <span class="app-toolbar-filler"></span>
     <div *ngIf="angularFire.auth | async">
+
         <a (click)="doLogout()">Logout</a>
     </div>
     <div *ngIf="!(angularFire.auth | async)">
