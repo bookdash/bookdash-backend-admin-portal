@@ -6,7 +6,11 @@ div {
   margin: 0;
   padding: 0;
 }
+body{
 
+  margin-left:0px;
+  margin-right:0px;
+}
 /* Box-sizing border-box */
 * {
   box-sizing: border-box;

@@ -31,7 +31,21 @@ export class Edit {
 
     constructor(public angularFire: AngularFire) {
     }
-    
+
+    get displayDate(){
+        if (this.book.createdDate == null){
+            this.book.createdDate = new Date().getTime();
+        }
+        return new Date(this.book.createdDate).toISOString().substring(0, 10);
+    }
+
+    set displayDate(e){
+        console.log("displayDate - edit:" + e);
+        let dateSplit = e.split('-');
+        let d = new Date(Date.UTC(Number(dateSplit[0]), Number(dateSplit[1]) - 1, Number(dateSplit[2])));
+        d.setFullYear(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() + 1);
+        this.book.createdDate = d.getTime();
+    }
     ngOnInit(){
         this.key = this.book.$key
         if(this.book != 'book')
@@ -71,6 +85,7 @@ export class Edit {
                     
                 }
             )
+            
 
         }
     }
