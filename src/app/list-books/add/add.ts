@@ -88,7 +88,7 @@ export class Add {
                 contributorsHash[this.contributorCheckboxes[contributorCheckboxIndex].key] = true
             }
         }
-      //  var date = new Date(this.bookCreatedDate);
+        
         console.log(this.bookCreatedDate);
         var bookData = {
             bookTitle: this.bookTitle,
@@ -96,11 +96,15 @@ export class Add {
             bookCoverPageUrl: this.bookCoverPageUrl,
             bookUrl: this.bookUrl,
             bookLanguage: this.bookLanguage,
-            bookEnabled: this.bookEnabled.checked,
+            bookEnabled: false,
             createdDate: this.bookCreatedDate,
             contributors: contributorsHash
         }
 
+        if(this.bookEnabled !== undefined && this.bookEnabled !== null){
+           bookData.bookEnabled = this.bookEnabled.checked 
+        } 
+        
         console.log(this.books)
         console.log(bookData)
         this.books.push().set(bookData);
