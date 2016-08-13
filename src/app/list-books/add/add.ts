@@ -73,7 +73,6 @@ export class Add {
         console.log("displayDate: add" + e);
         let dateSplit = e.split('-');
         let d = new Date(Date.UTC(Number(dateSplit[0]), Number(dateSplit[1]) - 1, Number(dateSplit[2])));
-        //let d = new Date(e);
         d.setFullYear(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() + 1);
         this.bookCreatedDate = d.getTime();
         console.log("displayDate add: end:" + this.bookCreatedDate);
