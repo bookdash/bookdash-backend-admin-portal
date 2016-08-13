@@ -40,7 +40,7 @@ export class Edit {
     }
 
     set displayDate(e){
-        console.log("displayDate:" + e);
+        console.log("displayDate - edit:" + e);
         let dateSplit = e.split('-');
         let d = new Date(Date.UTC(Number(dateSplit[0]), Number(dateSplit[1]) - 1, Number(dateSplit[2])));
         //let d = new Date(e);
