@@ -22,6 +22,7 @@ export class Edit {
     @Input() book: any; 
     @Input() books: any;
     language: string;
+    languageAbbreviation: string;
     languages: Array<any> = [];
     contributors: Array<any> = [];
     allContributors: Array<any> = [];
@@ -58,6 +59,7 @@ export class Edit {
                     languagesRaw.forEach((language) => {
                         if(language.$key === this.book.bookLanguage){
                             this.language = language.languageName;
+                            this.languageAbbreviation = language.languageAbbreviation.toLowerCase();
                         }
                         var languageHash: any = language
                         languageHash['key'] = language.$key

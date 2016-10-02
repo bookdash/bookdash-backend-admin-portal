@@ -20,7 +20,7 @@
     <div (click)="doEdit()">{{contributor.name}}</div>
 </td>
 <td *ngIf="!edit">
-    <img style="max-width: 100px; height: auto; " src="{{contributor.avatar}}" />
+    <img style="max-width: 100px; height: auto; " src="https://firebasestorage.googleapis.com/v0/b/book-dash.appspot.com/o/contributors%2F{{contributor.avatar}}?alt=media" />
 </td>
 <td >
     <div *ngIf="!edit">{{rolesString}}</div>
