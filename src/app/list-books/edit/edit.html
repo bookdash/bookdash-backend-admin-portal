@@ -27,7 +27,7 @@
     </select>
 </td>
 <td *ngIf="!edit">
-    <img style="max-width: 100px; height: auto; " src="https://firebasestorage.googleapis.com/v0/b/book-dash.appspot.com/o/book_covers%2F{{languageAbbreviation}}%2F{{book.bookCoverPageUrl}}?alt=media" />
+    <img style="max-width: 100px; height: auto; " src="{{bookCoverUrlFull}}" />
 </td>
 <td *ngIf="edit">
     <md-input [(ngModel)]="book.bookCoverPageUrl" type="string" placeholder="">

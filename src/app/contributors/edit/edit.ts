@@ -53,6 +53,9 @@ export class Edit {
         );
 
     }
+    get avatarFullUrl(){
+        return "https://firebasestorage.googleapis.com/v0/b/book-dash.appspot.com/o/" + encodeURIComponent(this.contributor.avatar) + "?alt=media";
+    }
 
     doEdit(){
         this.edit = true
