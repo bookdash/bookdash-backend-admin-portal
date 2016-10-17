@@ -40,6 +40,10 @@ export class Edit {
         return new Date(this.book.createdDate).toISOString().substring(0, 10);
     }
 
+    get bookCoverUrlFull(){
+        return "https://firebasestorage.googleapis.com/v0/b/book-dash.appspot.com/o/" + encodeURIComponent(this.book.bookCoverPageUrl) + "?alt=media";
+    }
+
     set displayDate(e){
         console.log("displayDate - edit:" + e);
         let dateSplit = e.split('-');
