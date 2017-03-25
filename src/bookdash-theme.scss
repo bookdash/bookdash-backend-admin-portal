@@ -1,0 +1,12 @@
+@import '~@angular/material/core/theming/all-theme';
+
+@include md-core();
+
+$forest-app-primary: md-palette($md-brown, 800);       // Brown  <-- CUSTOM COLOR HERE!
+$forest-app-accent:  md-palette($md-green, A400);      // Green  <-- CUSTOM COLOR HERE!
+
+$forest-app-warn:    md-palette($md-deep-orange, 500); // Orange <-- CUSTOM COLOR HERE!
+
+$forest-app-theme: md-light-theme($forest-app-primary, $forest-app-accent, $forest-app-warn);
+
+@include angular-material-theme($forest-app-theme);

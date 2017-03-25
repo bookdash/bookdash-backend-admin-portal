@@ -20,7 +20,9 @@
     <div (click)="doEdit()">{{contributor.name}}</div>
 </td>
 <td *ngIf="!edit">
-    <img style="max-width: 100px; height: auto; " src="{{avatarFullUrl}}" />
+    <div *ngIf="contributor.avatar">
+        <img style="max-width: 50px; height: auto; " src="{{avatarFullUrl}}" />
+    </div>
 </td>
 <td >
     <div *ngIf="!edit">{{rolesString}}</div>

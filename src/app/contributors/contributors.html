@@ -1,7 +1,13 @@
-<div *ngIf="angularFire.auth | async">
+<div *ngIf="angularFire.auth | async" style="margin-left:16px;margin-right:16px;margin-top: 8px;">
+    <br/>
+    <button md-raised-button color="primary" (click)="addContributor()">Add Contributor</button>
+    <br/>
+    <div *ngIf="showAdd">
+        <add [(show)]="showAdd" [contributors]="contributors"></add>
+    </div>
     <br/>
     <md-card class="add-edit-card">
-        <md-card-title>
+        <md-card-title>Contributors
         </md-card-title>
         <md-card-content>
             <table>
@@ -20,11 +26,4 @@
         </md-card-content>
     </md-card>
     <br/>
-
-    <button md-raised-button color="primary" (click)="addContributor()">Add Contributor</button>
-    <br/>
-    <br/>
-    <div *ngIf="showAdd">
-        <add [(show)]="showAdd" [contributors]="contributors"></add>
-    </div>
 </div>

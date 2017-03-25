@@ -1,8 +1,15 @@
-<div *ngIf="angularFire.auth | async">
+<div *ngIf="angularFire.auth | async" style="margin-left:16px;margin-right:16px;margin-top: 8px;">
+    <br/>
+    <button md-raised-button color="primary" (click)="addLanguage()">Add Language</button>
+    <br/>
+    <br/>
+    <div *ngIf="showAdd">
+        <add [(show)]="showAdd"></add>
+    </div>
     <br/>
 
     <md-card class="add-edit-card">
-        <md-card-title>
+        <md-card-title>Languages
         </md-card-title>
         <md-card-content>
             <table>
@@ -18,10 +25,5 @@
         </md-card-content>
     </md-card>
     <br/>
-    <button md-raised-button color="primary" (click)="addLanguage()">Add Language</button>
-    <br/>
-    <br/>
-    <div *ngIf="showAdd">
-        <add [(show)]="showAdd"></add>
-    </div>
+
 </div>
