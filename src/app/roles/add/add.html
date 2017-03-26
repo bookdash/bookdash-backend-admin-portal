@@ -1,12 +1,12 @@
 <md-card class="add-edit-card">
-    <md-card-title>
+    <md-card-title>Add New Role
     </md-card-title>
     <md-card-content>
         <p>
             <md-input [(ngModel)]="name" type="string" placeholder="Role Name">
             </md-input>
         </p>
-        <button md-raised-button color="primary" (click)="doCancel()">Cancel</button>
-        <button md-raised-button color="primary" (click)="doSave()">Save</button>
+        <button md-raised-button (click)="doCancel()">Cancel</button>
+        <button md-raised-button (click)="doSave()">Save</button>
     </md-card-content>
 </md-card>

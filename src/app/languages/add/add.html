@@ -1,5 +1,5 @@
 <md-card class="add-edit-card">
-    <md-card-title>
+    <md-card-title>Add Language
     </md-card-title>
     <md-card-content>
         <p>
@@ -12,7 +12,7 @@
         <p>
             <md-checkbox [(ngModel)]="enabled">Enabled</md-checkbox>
         </p>
-        <button md-raised-button color="primary" (click)="doCancel()">Cancel</button>
-        <button md-raised-button color="primary" (click)="doSave()">Save</button>
+        <button md-raised-button (click)="doCancel()">Cancel</button>
+        <button md-raised-button (click)="doSave()">Save</button>
     </md-card-content>
 </md-card>

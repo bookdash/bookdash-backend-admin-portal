@@ -1,8 +1,9 @@
 <div *ngIf="angularFire.auth | async" style="margin-left:16px;margin-right:16px;margin-top: 8px;">
-    <button md-raised-button color="primary" (click)="addBook()">Add Book</button>
     <br/>
+    <button md-raised-button style="background-color:#0083CB;color:#ffffff;" (click)="addBook()">Add Book</button>
     <br/>
     <div *ngIf="showAdd">
+        <br/>
         <add [(show)]="showAdd" [books]="books"></add>
     </div>
     <br/>
@@ -31,6 +32,5 @@
 
         </md-card-content>
     </md-card>
-
-
+<br/>
 </div>

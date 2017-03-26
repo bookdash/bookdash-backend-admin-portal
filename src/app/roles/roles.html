@@ -1,9 +1,9 @@
 <div *ngIf="angularFire.auth | async" style="margin-left:16px;margin-right:16px;margin-top: 8px;">
     <br/>
-    <button md-raised-button color="primary" (click)="addRole()">Add Role</button>
-    <br/>
+    <button md-raised-button style="background-color:#0083CB;color:#ffffff;" (click)="addRole()">Add Role</button>
     <br/>
     <div *ngIf="showAdd">
+      <br/>
         <add [(show)]="showAdd"></add>
     </div>
     <br/>

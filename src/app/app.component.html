@@ -2,11 +2,10 @@
     {{title}}
 </h1></sd-toolbar>
 
-<div *ngIf="angularFire.auth | async">
-    <sd-navbar></sd-navbar>
+<div *ngIf="angularFire.auth | async" style="background-color:#eeeeee;">
+    <sd-navbar style="background-color:#ffffff;"></sd-navbar>
 </div>
     <router-outlet></router-outlet>
 <div *ngIf="!(angularFire.auth | async)" style="margin: 8px;" >
     Please log in
 </div>
-

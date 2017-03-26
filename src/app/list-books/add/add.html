@@ -4,7 +4,7 @@
     <md-card-content>
         <p>
             <md-input [(ngModel)]="bookTitle" type="string" placeholder="Book Title" style="width:100%">
-            </md-input>     
+            </md-input>
         </p>
         <p>
             <md-input [(ngModel)]="bookDescription" type="string" placeholder="Book Description" style="width:100%">
@@ -12,7 +12,7 @@
         </p>
         <p>
             <md-input [(ngModel)]="bookCoverPageUrl" type="string" placeholder="Book Cover Page URL" style="width:100%">
-            </md-input> 
+            </md-input>
         </p>
            <p>
                <md-input [(ngModel)]="displayDateAdd" type="date" >
@@ -20,7 +20,7 @@
         </p>
         <p>
             <md-input [(ngModel)]="bookUrl" type="string" placeholder="Book URL" style="width:100%">
-            </md-input> 
+            </md-input>
         </p>
         <p>
             <md-checkbox [(ngModel)]="bookEnabled">Book Enabled</md-checkbox >
@@ -31,7 +31,7 @@
                 <option *ngFor="let language of languages" [value]="language.key">{{language.languageName}}</option>
             </select>
         </p>
-        Contributors: 
+        Contributors:
         <table>
             <tr *ngFor="let contributor of contributorCheckboxes">
                 <td>
@@ -42,8 +42,8 @@
             </tr>
         </table>
 
-        <button md-raised-button color="primary" (click)="doCancel()">Cancel</button>
-        <button md-raised-button color="primary" (click)="doSave()">Save</button>
+        <button md-raised-button (click)="doCancel()">Cancel</button>
+        <button md-raised-button (click)="doSave()">Save</button>
 
     </md-card-content>
 </md-card>

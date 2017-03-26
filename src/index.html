@@ -35,10 +35,10 @@
         <meta name="msapplication-TileImage" content="icon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
     </head>
-    <body style="margin: 0;">
+    <body style="margin: 0;background-color:#eeeeee;">
         <app-root>Loading...</app-root>
 
-        
+
 
         {{#each scripts.polyfills}}
         <script src="{{.}}"></script>
@@ -49,7 +49,7 @@
          }).catch(console.error.bind(console));
         </script>
 
-        
+
 
     </body>
 </html>

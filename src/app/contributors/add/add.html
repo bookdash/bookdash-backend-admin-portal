@@ -1,16 +1,16 @@
 <md-card class="add-edit-card">
-    <md-card-title>
+    <md-card-title>Add Contributor
     </md-card-title>
     <md-card-content>
         <p>
-            <md-input [(ngModel)]="name" type="string" placeholder="contributors name">
+            <md-input [(ngModel)]="name" type="string" placeholder="Contributors Name">
             </md-input>
         </p>
         <p>
-            <md-input [(ngModel)]="avatarUrl" type="string" placeholder="full avatar url">
+            <md-input [(ngModel)]="avatarUrl" type="string" placeholder="Avatar URL">
             </md-input>
         </p>
-        Role: 
+        Roles:
         <table>
             <tr *ngFor="#role of roleCheckboxes">
                 <td>
@@ -20,8 +20,8 @@
                 </td>
             </tr>
         </table>
-        <button md-raised-button color="primary" (click)="doCancel()">Cancel</button>
-        <button md-raised-button color="primary" (click)="doSave()">Save</button>
+        <button md-raised-button (click)="doCancel()">Cancel</button>
+        <button md-raised-button (click)="doSave()">Save</button>
 
     </md-card-content>
 </md-card>
